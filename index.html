@@ -1,63 +1,363 @@
 <!DOCTYPE html>
-<html lang="en" style="scroll-behavior: smooth;">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sabiq</title>
-    <link rel="icon" href="Images/me.jpg" type="image/gif" sizes="16x16">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>[YOUR NAME] – BTech CSE Student & Aspiring Web Developer</title>
+<meta name="description" content="Portfolio of [YOUR NAME], a BTech CSE student from Kerala, India, learning web development and building projects.">
+<meta property="og:title" content="[YOUR NAME] – Developer Portfolio">
+<meta property="og:description" content="I turn caffeine into questionable code.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0f0e;--surface:#171a19;--surface2:#202523;--line:#2c322f;--text:#f2f5f3;--muted:#9aa5a0;--accent:#39ff88;--accent-ink:#04210f;--glow:rgba(57,255,136,.25);
+--sans:"Space Grotesk",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,Menlo,monospace;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){}}
+:root[data-theme="light"]{--bg:#f6f8f7;--surface:#fff;--surface2:#e9eeeb;--line:#d3dbd7;--text:#101412;--muted:#55605b;--accent:#0a9b4a;--accent-ink:#fff;--glow:rgba(10,155,74,.2)}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px));height:auto}
+body{margin:0;background:var(--bg);color:var(--text);font:400 17px/1.6 var(--sans);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+body.reduce *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:88px 0}
+h1,h2,h3{line-height:1.1;margin:0;letter-spacing:-.02em}
+h2{font-size:clamp(2rem,5vw,3.2rem);margin-bottom:12px}
+.lead{color:var(--muted);max-width:60ch;margin:0 0 32px}
+.mono{font-family:var(--mono)}
+#glow{position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,30%),var(--glow),transparent 70%)}
+#sym{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+#sym span{position:absolute;font:600 22px var(--mono);color:var(--accent);opacity:.12;animation:float 18s linear infinite}
+@keyframes float{from{transform:translateY(105vh)}to{transform:translateY(-10vh)}}
+main,header,footer{position:relative;z-index:1}
+nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:50;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:16px;height:60px}
+.logo{font:700 18px var(--mono);text-decoration:none;color:var(--accent);background:none;border:0;cursor:pointer;padding:6px}
+.links{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.links a{padding:8px 12px;border-radius:8px;text-decoration:none;color:var(--muted);font-size:15px;white-space:nowrap}
+.links a:hover{color:var(--text);background:var(--surface2)}
+.ico{background:var(--surface);border:1px solid var(--line);color:var(--text);border-radius:10px;width:40px;height:40px;cursor:pointer;font-size:17px;flex:none}
+.ico:hover{border-color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--text);font:600 16px var(--sans);cursor:pointer;text-decoration:none;transition:transform .15s,box-shadow .15s,border-color .15s}
+.btn:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 6px 24px var(--glow)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px}
+.hero{padding-top:130px;min-height:100svh;display:flex;align-items:center}
+.hero .wrap{display:grid;gap:40px;grid-template-columns:1.3fr 1fr;align-items:center}
+.hi{font:400 16px var(--mono);color:var(--accent);margin-bottom:12px}
+.hero h1{font-size:clamp(2.4rem,6.4vw,4.6rem);margin-bottom:18px}
+.role{font:600 clamp(1.1rem,2.6vw,1.5rem) var(--mono);min-height:1.8em;margin-bottom:26px}
+.role::after{content:"▍";color:var(--accent);animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.row{display:flex;flex-wrap:wrap;gap:12px}
+.dont{margin-top:20px}
+#dontMsg{min-height:1.6em;margin-top:10px;color:var(--muted);font:400 15px var(--mono)}
+.profile{position:relative;justify-self:center;width:min(100%,340px);transition:transform .25s}
+.profile:hover{transform:rotate(-2deg) scale(1.02)}
+.frame{aspect-ratio:4/5;border-radius:28px;border:2px solid var(--accent);box-shadow:0 0 60px var(--glow);overflow:hidden;background:var(--surface2);display:grid;place-items:center}
+.frame img{width:100%;height:100%;object-fit:cover;display:block}
+.frame .ph{font:700 64px var(--mono);color:var(--accent)}
+.chip{position:absolute;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:6px 10px;font:600 13px var(--mono);animation:bob 4s ease-in-out infinite}
+.chip:nth-of-type(2){animation-delay:-1.3s}.chip:nth-of-type(3){animation-delay:-2.6s}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.status{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:55;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font:400 13px var(--mono);display:flex;gap:8px;align-items:center;max-width:calc(100vw - 28px)}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);flex:none}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.about{display:grid;gap:24px;grid-template-columns:1fr 1fr}
+.about p{margin:0 0 14px}
+mark{background:linear-gradient(transparent 60%,var(--glow) 60%);color:inherit}
+.fact{margin-bottom:12px}.fact b{color:var(--accent);font:600 14px var(--mono);display:block}
+.bar{height:10px;border-radius:99px;background:var(--surface2);overflow:hidden;margin:6px 0 4px}
+.bar span{display:block;height:100%;background:var(--accent);border-radius:99px;transition:width .5s}
+.sk{cursor:pointer;text-align:left;color:var(--text);font:inherit;transition:transform .15s,box-shadow .15s,border-color .15s}
+.sk:hover,.sk[aria-pressed=true]{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 8px 28px var(--glow)}
+.sk h3{font-size:1.3rem}
+.sk small{color:var(--muted)}
+#skInfo{margin-top:16px;min-height:120px}
+.term{background:#050706;color:#d6ffe6;border:1px solid var(--line);border-radius:16px;font:400 14px/1.6 var(--mono);overflow:hidden;margin-top:28px}
+.term .bar2{background:#121614;padding:8px 14px;color:#8a968f;border-bottom:1px solid #1f2623}
+#out{padding:14px;height:230px;overflow-y:auto;white-space:pre-wrap;word-break:break-word}
+.term form{display:flex;border-top:1px solid #1f2623}
+.term label{padding:12px 0 12px 14px;color:#39ff88}
+.term input{flex:1;background:none;border:0;color:#fff;font:inherit;padding:12px;min-width:0}
+.term input:focus{outline:none}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.tag{font:400 12px var(--mono);border:1px solid var(--line);border-radius:99px;padding:2px 10px;color:var(--muted)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.filters button{padding:8px 14px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--text);font:400 14px var(--mono);cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.proj{cursor:pointer;transition:transform .15s,border-color .15s;text-align:left;color:var(--text);font:inherit;display:flex;flex-direction:column;gap:6px}
+.proj:hover{border-color:var(--accent)}
+.shot{aspect-ratio:16/9;border-radius:12px;background:repeating-linear-gradient(135deg,var(--surface2) 0 12px,var(--surface) 12px 24px);display:grid;place-items:center;color:var(--muted);font:400 13px var(--mono);margin-bottom:6px}
+dialog{background:var(--surface);color:var(--text);border:1px solid var(--accent);border-radius:20px;max-width:560px;width:calc(100% - 32px);padding:26px}
+dialog::backdrop{background:rgba(0,0,0,.65)}
+dialog ul{padding-left:20px}
+.tl{position:relative;margin:0;padding:0 0 0 28px;list-style:none;border-left:2px solid var(--line)}
+.tl li{position:relative;margin-bottom:24px}
+.tl li::before{content:"";position:absolute;left:-37px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.tl b{display:block}.tl span{color:var(--muted)}
+.dx{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.out{min-height:3.2em;margin:12px 0;color:var(--text)}
+.moods{display:flex;flex-wrap:wrap;gap:8px}
+.moods button{padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface2);color:var(--text);cursor:pointer;font:400 14px var(--sans)}
+.moods button[aria-pressed=true]{border-color:var(--accent);box-shadow:0 0 14px var(--glow)}
+.field{display:grid;gap:4px;margin-bottom:14px}
+.field input,.field textarea{background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:12px;color:var(--text);font:inherit;width:100%}
+.err{color:#ff6b6b;font-size:14px;min-height:1.2em}
+.big{font-size:clamp(2rem,6vw,3.6rem)}
+footer{border-top:1px solid var(--line);padding:32px 0 80px;color:var(--muted);font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+#toast{position:fixed;left:50%;bottom:70px;transform:translateX(-50%);background:var(--accent);color:var(--accent-ink);padding:10px 18px;border-radius:12px;font-weight:600;z-index:70;opacity:0;pointer-events:none;transition:opacity .2s}
+#toast.on{opacity:1}
+@media (max-width:760px){.hero .wrap,.about{grid-template-columns:1fr}.links a{padding:8px 9px;font-size:14px}.logo{display:none}section{padding:64px 0}}
+</style>
 </head>
-
 <body>
+<div id="glow" aria-hidden="true"></div><div id="sym" aria-hidden="true"></div>
 
+<nav aria-label="Main">
+ <div class="wrap">
+  <button class="logo" id="logo" aria-label="Logo" title="Hmm, why is this clickable?">&lt;/me&gt;</button>
+  <div class="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#journey">Journey</a><a href="#contact">Contact</a></div>
+  <button class="ico" id="motion" aria-pressed="false" aria-label="Reduce motion" title="Reduce motion">✦</button>
+  <button class="ico" id="theme" aria-label="Toggle light and dark theme" title="Toggle theme">☾</button>
+ </div>
+</nav>
+<div class="status" role="status"><i></i>Probably debugging something…</div>
+<div id="toast" role="status" aria-live="polite"></div>
 
+<header class="hero" id="top">
+ <div class="wrap">
+  <div>
+   <div class="hi">Hey there, Internet!</div>
+   <h1 data-bind="heroTitle"></h1>
+   <div class="role" id="role" aria-live="off"></div>
+   <div class="row">
+    <a class="btn primary" href="#projects">Explore My Work</a>
+    <a class="btn" href="#contact">Let’s Connect</a>
+   </div>
+   <div class="dont"><button class="btn" id="dont">Don’t Click This</button><div id="dontMsg" aria-live="polite"></div></div>
+  </div>
+  <div class="profile">
+   <div class="frame" id="frame">
+      <img src="" alt="">
+   </div>
+   <span class="chip" style="top:-10px;right:-8px">&lt;html/&gt;</span>
+   <span class="chip" style="bottom:50px;left:-14px">$ git push</span>
+   <span class="chip" style="bottom:-10px;right:20px">{ JS }</span>
+  </div>
+ </div>
+</header>
 
-    
-        <div class="container  pt-5">
-            <div class="row">
+<main>
+<section id="about"><div class="wrap">
+ <h2>About me</h2>
+ <div class="about">
+  <div>
+   <p>I’m a <mark>BTech Computer Science Engineering</mark> student from <span data-bind="location"></span>, exploring programming and web development one broken build at a time.</p>
+   <p>I like <mark>creative problem-solving</mark>, trying new technologies, and turning ideas into things people can click on.</p>
+   <button class="btn" id="more" aria-expanded="false">More about me</button>
+   <div id="moreOut" class="out mono" aria-live="polite"></div>
+  </div>
+  <div class="card">
+   <h3 style="margin-bottom:14px">A few things about me</h3>
+   <div class="fact"><b>Currently learning</b><span data-bind="learning"></span></div>
+   <div class="fact"><b>Currently building</b><span data-bind="building"></span></div>
+   <div class="fact"><b>Developer personality</b>10% planning, 20% coding, 70% wondering why it doesn’t work.</div>
+   <div class="fact"><b>Goal</b>Build useful, creative, and impactful software.</div>
+  </div>
+ </div>
+</div></section>
 
-                <div class="col-md-6 col-9">
-                    <hr>
-                    <hr>
-                    <img src="Images/me.jpg" style="width:20em;" height="15em" alt=""
-                        class=" img-fluid rounded-circle my-auto">
+<section id="skills"><div class="wrap">
+ <h2>Tech stack</h2>
+ <p class="lead">Tap a skill. The meter is my own self-assessment, not a measured score.</p>
+ <div class="grid" id="skGrid"></div>
+ <div class="card" id="skInfo" aria-live="polite">Pick a skill above.</div>
+ <div class="term" role="region" aria-label="Interactive terminal">
+  <div class="bar2">portfolio — terminal</div>
+  <div id="out" tabindex="0"></div>
+  <form id="tf"><label for="tin">$</label><input id="tin" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="type help"></form>
+ </div>
+</div></section>
 
-                </div>
-                <div class="col-md-6 pt-4">
-                    <h4 style="font-family: fantasy;"><br><br><br>Hi, i'm Sabiq.</h4>
-                    <blockquote class="blockquote">
-                        <p style="font-family: monospace">I am developing my skills in HTML, CSS, and JS, I
-                            am passionate about my work, and I will continue to improve myself.
-                        </p>
-                    </blockquote>
+<section id="projects"><div class="wrap">
+ <h2>Projects</h2>
+ <p class="lead">Placeholders for now. Replace them in the <code>CONFIG.projects</code> list. Links stay hidden until you add real ones.</p>
+ <div class="filters" id="filters" role="group" aria-label="Filter by technology"></div>
+ <div class="grid" id="pGrid"></div>
+</div></section>
 
-                    <a href="https://www.instagram.com/sabiqsabii?igsh=NjV6eWYydXN0MGNi" target="_blank"> <img
-                            src="Images/instagram-logo.png" style="width: 1em;" height="15em" alt=""></a>
+<dialog id="modal" aria-labelledby="mTitle"><div id="mBody"></div></dialog>
 
-                    &nbsp;
-                    <a href="https://x.com/sabiqsabii?t=MLhY9tufiyqJnYGVhFD1RA&s=08" target="_blank"> <img
-                            src="Images/twitter.png" style="width: 1em;" height="15em" alt=""></a>
-                    <hr>
-                    <hr>
-                </div>
+<section id="journey"><div class="wrap">
+ <h2>My journey</h2>
+ <p class="lead">No dates yet. Add yours in <code>CONFIG.journey</code>.</p>
+ <ol class="tl" id="tl"></ol>
+</div></section>
 
-            </div>
-        </div>
-   
+<section id="fun"><div class="wrap">
+ <h2>The Developer Experience</h2>
+ <p class="lead">Small things to poke at. Try <code>sudo hire-me</code> in the terminal above.</p>
+ <div class="dx">
+  <div class="card"><h3>Bug simulator</h3><div class="out" id="bugOut">0 bugs fixed.</div><button class="btn" id="bug">Fix a Bug</button></div>
+  <div class="card"><h3>Developer mood</h3><div class="out" id="moodOut">Mood: Locked In</div><div class="moods" id="moods"></div></div>
+  <div class="card"><h3>Random dev fact</h3><div class="out" id="factOut">Press the button.</div><button class="btn" id="fact">Tell me something</button></div>
+ </div>
+</div></section>
 
+<section id="contact"><div class="wrap">
+ <h2 class="big">Got an idea? Let’s build something.</h2>
+ <div class="row" style="margin:24px 0 32px">
+  <a class="btn primary" id="mail" href="#">Email me</a>
+  <button class="btn" id="copy">Copy email</button>
+  <a class="btn" id="gh" href="#" rel="noopener">GitHub</a>
+  <a class="btn" id="li" href="#" rel="noopener">LinkedIn</a>
+ </div>
+ <form class="card" id="cf" novalidate style="max-width:560px">
+  <p class="mono" style="margin-top:0;color:var(--muted);font-size:14px">Demo form: nothing is sent until you connect a service (e.g. Formspree) by setting <code>CONFIG.formEndpoint</code>.</p>
+  <div class="field"><label for="n">Name</label><input id="n" autocomplete="name"><div class="err" id="en"></div></div>
+  <div class="field"><label for="e">Email</label><input id="e" type="email" autocomplete="email"><div class="err" id="ee"></div></div>
+  <div class="field"><label for="m">Message</label><textarea id="m" rows="4"></textarea><div class="err" id="em"></div></div>
+  <button class="btn primary" type="submit">Send message</button>
+  <div id="fs" class="out" aria-live="polite"></div>
+ </form>
+ <p style="margin-top:32px;color:var(--muted);max-width:60ch">Thanks for visiting. You may now close this tab and pretend you discovered me before I became famous.</p>
+</div></section>
+</main>
 
+<footer><div class="wrap">
+ <div><b data-bind="name"></b> · BTech CSE Student | Aspiring Web Developer<br><span style="font-size:13px">Designed with curiosity, caffeine, and several console errors.</span><br><span id="yr" class="mono" style="font-size:13px"></span></div>
+ <div class="row"><a class="btn" id="gh2" href="#" rel="noopener">GitHub</a><a class="btn" id="li2" href="#" rel="noopener">LinkedIn</a><a class="btn" href="#top">Back to top</a></div>
+</div></footer>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+<script>
+/* ===== EDIT ME: everything personal lives here ===== */
+const CONFIG={
+ name:"[YOUR NAME]", college:"[YOUR COLLEGE]", location:"Kerala, India",
+ photo:"", /* put a path or data: URL of your photo here, e.g. "assets/me.jpg" */
+ github:"", linkedin:"", email:"", formEndpoint:"",
+ learning:"[CURRENTLY LEARNING]", building:"[CURRENT PROJECT]",
+ roles:["CSE Student","Aspiring Web Developer","Bug Creator & Occasional Fixer","Future Software Engineer"],
+ moreFacts:["I have strong opinions about tabs vs spaces and I’m still deciding them.","Some of my best ideas arrive right after I close the laptop.","[ADD A FACT ABOUT YOU]"],
+ skills:[
+  {n:"HTML",lvl:80,d:"Structure and semantics for the web."},
+  {n:"CSS",lvl:70,d:"Layouts, responsive design, and making things not ugly."},
+  {n:"JavaScript",lvl:60,d:"Making pages respond to people."},
+  {n:"C",lvl:65,d:"Pointers, memory, and humility."},
+  {n:"C++",lvl:60,d:"Object-oriented programming and data structures."},
+  {n:"Git & GitHub",lvl:60,d:"Version control, so I can undo my mistakes in public."}
+ ],
+ projects:[
+  {name:"Automatic Exam Seating Arrangement System",desc:"[Describe your project]",tech:["JavaScript","HTML"],features:["[Feature 1]","[Feature 2]"],repo:"",demo:""},
+  {name:"Vehicle Carbon Emission Calculator",desc:"[Describe your project]",tech:["C++"],features:["[Feature 1]","[Feature 2]"],repo:"",demo:""},
+  {name:"Algorithm Visualizer",desc:"[Describe your project]",tech:["JavaScript","CSS"],features:["[Feature 1]","[Feature 2]"],repo:"",demo:""},
+  {name:"[ADD ANOTHER PROJECT]",desc:"[Describe your project]",tech:["C"],features:["[Feature 1]"],repo:"",demo:""}
+ ],
+ journey:[
+  {t:"Started exploring programming",d:"[Add your story]"},{t:"Began studying Computer Science Engineering",d:"[Add details]"},
+  {t:"Learned programming fundamentals",d:"[Add details]"},{t:"Explored web development and version control",d:"[Add details]"},
+  {t:"Built college and personal projects",d:"[Add details]"},{t:"Currently learning and building new things",d:"[Add details]"}
+ ]
+};
+const $=s=>document.querySelector(s), esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+function toast(t){const e=$("#toast");e.textContent=t;e.classList.add("on");clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove("on"),1800)}
+
+/* bindings */
+const B={name:CONFIG.name,location:CONFIG.location,learning:CONFIG.learning,building:CONFIG.building};
+document.querySelectorAll("[data-bind]").forEach(e=>{e.textContent=e.dataset.bind==="heroTitle"?`I’m ${CONFIG.name}. I turn caffeine into questionable code.`:B[e.dataset.bind]});
+$("#yr").textContent="© "+new Date().getFullYear();
+$("#frame").innerHTML=CONFIG.photo?`<img src="${esc(CONFIG.photo)}" alt="Portrait of ${esc(CONFIG.name)}" loading="eager">`:`<div class="ph" role="img" aria-label="Photo placeholder">&lt;/&gt;</div>`;
+function link(id,url,fallback){const a=$(id);if(url){a.href=url;a.target="_blank"}else{a.href="#contact";a.addEventListener("click",()=>toast(fallback+" link not set yet"))}}
+link("#gh",CONFIG.github,"GitHub");link("#gh2",CONFIG.github,"GitHub");link("#li",CONFIG.linkedin,"LinkedIn");link("#li2",CONFIG.linkedin,"LinkedIn");
+$("#mail").href=CONFIG.email?"mailto:"+CONFIG.email:"#contact";
+$("#copy").onclick=async()=>{if(!CONFIG.email)return toast("Email not set yet");try{await navigator.clipboard.writeText(CONFIG.email);toast("Email copied ✓")}catch{toast("Copy failed. Select it manually: "+CONFIG.email)}};
+
+/* theme + motion */
+const root=document.documentElement;
+function setTheme(t){root.dataset.theme=t;$("#theme").textContent=t==="light"?"☀":"☾"}
+try{setTheme(localStorage.getItem("theme")||"dark")}catch{setTheme("dark")}
+$("#theme").onclick=()=>{const t=root.dataset.theme==="light"?"dark":"light";setTheme(t);try{localStorage.setItem("theme",t)}catch{}};
+const rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+$("#motion").onclick=e=>{const on=document.body.classList.toggle("reduce");e.currentTarget.setAttribute("aria-pressed",on);$("#glow").style.display=$("#sym").style.display=on?"none":"";toast(on?"Animations off":"Animations on")};
+if(rm)$("#motion").click();
+
+/* background */
+addEventListener("pointermove",e=>{root.style.setProperty("--mx",e.clientX+"px");root.style.setProperty("--my",e.clientY+"px")},{passive:true});
+$("#sym").innerHTML=["{ }","</>","=>","&&","[]","0x1F","++","#!"].map((s,i)=>`<span style="left:${(i*13+5)%95}%;animation-delay:${-i*2.3}s;animation-duration:${16+i*2}s">${esc(s)}</span>`).join("");
+
+/* roles typing */
+(function(){const el=$("#role");let i=0,j=0,del=false;if(rm){el.textContent=CONFIG.roles[0];return}
+ (function tick(){const w=CONFIG.roles[i];el.textContent=w.slice(0,j);if(!del&&j===w.length){del=true;return setTimeout(tick,1400)}
+  if(del&&j===0){del=false;i=(i+1)%CONFIG.roles.length}j+=del?-1:1;setTimeout(tick,del?35:70)})()})();
+
+/* don't click */
+const dontMsgs=["You were specifically told not to click it.","Bold. Reckless. I respect it.","Nothing happened. Or did it?","Okay, that’s enough. Please stop.","I’m telling the compiler.","Fine, you win. Have a cookie. 🍪","Still clicking? Hire this person.","This button has filed an HR complaint."];
+let dc=0;$("#dont").onclick=()=>{$("#dontMsg").textContent=dontMsgs[dc++%dontMsgs.length]};
+
+/* about */
+let mi=0;$("#more").onclick=e=>{const o=$("#moreOut");o.innerHTML+=`<div>→ ${esc(CONFIG.moreFacts[mi%CONFIG.moreFacts.length])}</div>`;mi++;e.currentTarget.setAttribute("aria-expanded","true")};
+
+/* skills */
+$("#skGrid").innerHTML=CONFIG.skills.map((s,i)=>`<button class="card sk" data-i="${i}" aria-pressed="false"><h3>${esc(s.n)}</h3><small class="mono">tap for details</small></button>`).join("");
+$("#skGrid").onclick=e=>{const b=e.target.closest(".sk");if(!b)return;document.querySelectorAll(".sk").forEach(x=>x.setAttribute("aria-pressed","false"));b.setAttribute("aria-pressed","true");const s=CONFIG.skills[b.dataset.i];
+ $("#skInfo").innerHTML=`<h3>${esc(s.n)}</h3><p>${esc(s.d)}</p><div class="bar" role="img" aria-label="Self-assessed ${s.lvl} percent"><span style="width:${s.lvl}%"></span></div><small class="mono">Self-assessment: ${s.lvl}% (my own opinion, not a test result)</small>`};
+
+/* terminal */
+const out=$("#out");function say(t,cls){out.insertAdjacentHTML("beforeend",`<div>${t}</div>`);out.scrollTop=out.scrollHeight}
+say("Welcome. Type <b>help</b> to see commands.");
+const cmds={
+ help:()=>"Commands: help, about, skills, projects, contact, clear, sudo hire-me",
+ about:()=>`${esc(CONFIG.name)}: BTech CSE student, ${esc(CONFIG.location)}. Learning ${esc(CONFIG.learning)}.`,
+ skills:()=>CONFIG.skills.map(s=>esc(s.n)).join(", "),
+ projects:()=>CONFIG.projects.map((p,i)=>`${i+1}. ${esc(p.name)}`).join("<br>"),
+ contact:()=>`Email: ${esc(CONFIG.email||"[YOUR EMAIL]")}<br>GitHub: ${esc(CONFIG.github||"[YOUR GITHUB LINK]")}`,
+ "sudo hire-me":()=>"[sudo] password for recruiter: ********<br>Access granted. Candidate is enthusiastic, caffeinated, and teachable. (Simulated: no real command ran.)",
+ clear:()=>{out.innerHTML="";return null}
+};
+$("#tf").onsubmit=e=>{e.preventDefault();const v=$("#tin").value.trim().toLowerCase().replace(/\s+/g," ");$("#tin").value="";if(!v)return;
+ say(`<span style="color:#39ff88">$</span> ${esc(v)}`);const f=cmds[v];const r=f?f():`Command not found: ${esc(v)}. Try <b>help</b>.`;if(r)say(r)};
+
+/* projects */
+const techs=["All",...new Set(CONFIG.projects.flatMap(p=>p.tech))];let flt="All";
+function renderP(){$("#filters").innerHTML=techs.map(t=>`<button aria-pressed="${t===flt}" data-t="${esc(t)}">${esc(t)}</button>`).join("");
+ $("#pGrid").innerHTML=CONFIG.projects.map((p,i)=>({p,i})).filter(({p})=>flt==="All"||p.tech.includes(flt)).map(({p,i})=>
+ `<button class="card proj" data-i="${i}"><div class="shot">screenshot placeholder</div><h3>${esc(p.name)}</h3><div>${esc(p.desc)}</div><div class="tags">${p.tech.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div></button>`).join("")}
+$("#filters").onclick=e=>{const b=e.target.closest("button");if(b){flt=b.dataset.t;renderP()}};
+$("#pGrid").onclick=e=>{const b=e.target.closest(".proj");if(!b)return;const p=CONFIG.projects[b.dataset.i];
+ $("#mBody").innerHTML=`<h3 id="mTitle">${esc(p.name)}</h3><p>${esc(p.desc)}</p><div class="tags">${p.tech.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div><ul>${p.features.map(f=>`<li>${esc(f)}</li>`).join("")}</ul>
+ <div class="row">${p.repo?`<a class="btn" target="_blank" rel="noopener" href="${esc(p.repo)}">View Code</a>`:`<span class="tag">Code link not added</span>`}${p.demo?`<a class="btn primary" target="_blank" rel="noopener" href="${esc(p.demo)}">Live Demo</a>`:`<span class="tag">No live demo</span>`}<button class="btn" onclick="modal.close()">Close</button></div>`;modal.showModal()};
+const modal=$("#modal");modal.addEventListener("click",e=>{if(e.target===modal)modal.close()});renderP();
+
+/* journey */
+$("#tl").innerHTML=CONFIG.journey.map(j=>`<li><b>${esc(j.t)}</b><span>${esc(j.d)}</span></li>`).join("");
+
+/* fun zone */
+const bugs=["Fixed one bug. Accidentally created three more.","Removed a semicolon. Now it works. Nobody knows why.","Added a console.log. Bug became shy and vanished.","Bug fixed! Turns out it was a feature.","Restarted it. Classic.","Blamed the cache. The cache accepts responsibility."];
+let bc=0;$("#bug").onclick=()=>{bc++;$("#bugOut").textContent=`${bc} bug${bc>1?"s":""} fixed. ${pick(bugs)}`};
+const moods={"Locked In":"Headphones on. Do not disturb.","Debugging":"Staring at code. The code stares back.","Coffee Required":"Loading… please insert coffee.","It Works. Don’t Touch It.":"Nobody breathe."};
+$("#moods").innerHTML=Object.keys(moods).map((m,i)=>`<button aria-pressed="${i===0}" data-m="${esc(m)}">${esc(m)}</button>`).join("");
+$("#moods").onclick=e=>{const b=e.target.closest("button");if(!b)return;document.querySelectorAll("#moods button").forEach(x=>x.setAttribute("aria-pressed","false"));b.setAttribute("aria-pressed","true");$("#moodOut").textContent=`${b.dataset.m}: ${moods[b.dataset.m]}`};
+const facts=["There are 10 types of people: those who understand binary and those who don’t.","A SQL query walks into a bar, sees two tables and asks: can I join you?","The first computer bug was a real moth, found in a Harvard Mark II in 1947.","“It works on my machine” is not a deployment strategy.","Git was created by Linus Torvalds in 2005.","There are only two hard things in CS: cache invalidation and naming things."];
+$("#fact").onclick=()=>{$("#factOut").textContent=pick(facts)};
+
+/* easter egg: click the logo 5 times, or type the Konami code */
+let lc=0;function egg(){toast("🥚 You found it. Secret unlocked: you’re officially a curious person.");document.body.animate([{filter:"hue-rotate(0)"},{filter:"hue-rotate(360deg)"}],{duration:rm?1:1500})}
+$("#logo").onclick=()=>{if(++lc>=5){lc=0;egg()}};
+const K=["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a"];let ki=0;
+addEventListener("keydown",e=>{if(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA")return;ki=e.key===K[ki]?ki+1:(e.key===K[0]?1:0);if(ki===K.length){ki=0;egg()}});
+
+/* contact form */
+$("#cf").onsubmit=async e=>{e.preventDefault();const n=$("#n").value.trim(),m=$("#m").value.trim(),em=$("#e").value.trim();
+ $("#en").textContent=n?"":"Enter your name.";$("#ee").textContent=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)?"":"Enter a valid email address.";$("#em").textContent=m.length>=10?"":"Write at least 10 characters.";
+ if(!n||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)||m.length<10)return;
+ if(!CONFIG.formEndpoint){$("#fs").textContent="Form is valid, but this is a demo: no message was sent. Use the email button above.";return}
+ try{const r=await fetch(CONFIG.formEndpoint,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({name:n,email:em,message:m})});$("#fs").textContent=r.ok?"Message sent. Thank you!":"Sending failed. Please email me directly.";if(r.ok)e.target.reset()}catch{$("#fs").textContent="Network error. Please email me directly."}};
+</script>
 </body>
-
 </html>
