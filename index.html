@@ -8,7 +8,7 @@
 <meta property="og:title" content="SABIQ A – Developer Portfolio">
 <meta property="og:description" content="I turn caffeine into questionable code.">
 <meta property="og:type" content="website">
- <link rel="icon" href="images/me.jpg" type="image/gif" >
+<link rel="icon" href="images/me.jpg" type="image/gif">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
@@ -79,21 +79,6 @@ mark{background:linear-gradient(transparent 60%,var(--glow) 60%);color:inherit}
 .sk h3{font-size:1.3rem}
 .sk small{color:var(--muted)}
 #skInfo{margin-top:16px;min-height:120px}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
-.tag{font:400 12px var(--mono);border:1px solid var(--line);border-radius:99px;padding:2px 10px;color:var(--muted)}
-.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
-.filters button{padding:8px 14px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--text);font:400 14px var(--mono);cursor:pointer}
-.filters button[aria-pressed=true]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
-.proj{cursor:pointer;transition:transform .15s,border-color .15s;text-align:left;color:var(--text);font:inherit;display:flex;flex-direction:column;gap:6px}
-.proj:hover{border-color:var(--accent)}
-.shot{aspect-ratio:16/9;border-radius:12px;background:repeating-linear-gradient(135deg,var(--surface2) 0 12px,var(--surface) 12px 24px);display:grid;place-items:center;color:var(--muted);font:400 13px var(--mono);margin-bottom:6px}
-dialog{background:var(--surface);color:var(--text);border:1px solid var(--accent);border-radius:20px;max-width:560px;width:calc(100% - 32px);padding:26px}
-dialog::backdrop{background:rgba(0,0,0,.65)}
-dialog ul{padding-left:20px}
-.tl{position:relative;margin:0;padding:0 0 0 28px;list-style:none;border-left:2px solid var(--line)}
-.tl li{position:relative;margin-bottom:24px}
-.tl li::before{content:"";position:absolute;left:-37px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
-.tl b{display:block}.tl span{color:var(--muted)}
 .dx{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
 .out{min-height:3.2em;margin:12px 0;color:var(--text)}
 .moods{display:flex;flex-wrap:wrap;gap:8px}
@@ -116,7 +101,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
 <nav aria-label="Main">
  <div class="wrap">
   <button class="logo" id="logo" aria-label="Logo" title="Hmm, why is this clickable?">&lt;/me&gt;</button>
-  <div class="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#journey">Journey</a><a href="#socials">Socials</a></div>
+  <div class="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#socials">Socials</a></div>
   <button class="ico" id="motion" aria-pressed="false" aria-label="Reduce motion" title="Reduce motion">✦</button>
   <button class="ico" id="theme" aria-label="Toggle light and dark theme" title="Toggle theme">☾</button>
  </div>
@@ -131,7 +116,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
    <h1 data-bind="heroTitle"></h1>
    <div class="role" id="role" aria-live="off"></div>
    <div class="row">
-    <a class="btn primary" href="#projects">Explore My Work</a>
+    <a class="btn primary" href="#about">About Me</a>
     <a class="btn" href="#socials">Let’s Connect</a>
    </div>
    <div class="dont"><button class="btn" id="dont">Don’t Click This</button><div id="dontMsg" aria-live="polite"></div></div>
@@ -172,21 +157,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
  <div class="card" id="skInfo" aria-live="polite">Pick a skill above.</div>
 </div></section>
 
-<section id="projects"><div class="wrap">
- <h2>Projects</h2>
- <p class="lead">Placeholders for now. Replace them in the <code>CONFIG.projects</code> list. Links stay hidden until you add real ones.</p>
- <div class="filters" id="filters" role="group" aria-label="Filter by technology"></div>
- <div class="grid" id="pGrid"></div>
-</div></section>
-
-<dialog id="modal" aria-labelledby="mTitle"><div id="mBody"></div></dialog>
-
-<section id="journey"><div class="wrap">
- <h2>My journey</h2>
- <p class="lead">No dates yet. Add yours in <code>CONFIG.journey</code>.</p>
- <ol class="tl" id="tl"></ol>
-</div></section>
-
 <section id="fun"><div class="wrap">
  <h2>The Developer Experience</h2>
  <p class="lead">Small interactive things to poke at.</p>
@@ -214,7 +184,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
 /* ===== EDIT ME: everything personal lives here ===== */
 const CONFIG={
  name:"SABIQ A", college:"[YOUR COLLEGE]", location:"Kerala, India",
- photo:"images/me.jpg", /* Image file in the same directory */
+ photo:"images/me.jpg", /* Image file */
  github:"https://github.com/sabiqsabii", linkedin:"https://www.linkedin.com/in/sabiq-a-937333389?utm_source=share_via&utm_content=profile&utm_medium=member_android", instagram:"https://www.instagram.com/sabiqsabii/",
  extraSocials:[], /* e.g. [{n:"Instagram",u:"https://instagram.com/you"}] */
  learning:"[CURRENTLY LEARNING]", building:"[CURRENT PROJECT]",
@@ -227,16 +197,6 @@ const CONFIG={
   {n:"C",lvl:65,d:"Pointers, memory, and humility."},
   {n:"C++",lvl:60,d:"Object-oriented programming and data structures."},
   {n:"Git & GitHub",lvl:60,d:"Version control, so I can undo my mistakes in public."}
- ],
- projects:[
-  {name:"Automatic Exam Seating Arrangement System",desc:"[Describe your project]",tech:["JavaScript","HTML"],features:["[Feature 1]","[Feature 2]"],repo:"",demo:""},
-  
-  
- ],
- journey:[
-  {t:"Started exploring programming",d:"[Add your story]"},{t:"Began studying Computer Science Engineering",d:"[Add details]"},
-  {t:"Learned programming fundamentals",d:"[Add details]"},{t:"Explored web development and version control",d:"[Add details]"},
-  {t:"Built college and personal projects",d:"[Add details]"},{t:"Currently learning and building new things",d:"[Add details]"}
  ]
 };
 const $=s=>document.querySelector(s), esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -286,20 +246,6 @@ let mi=0;$("#more").onclick=e=>{const o=$("#moreOut");o.innerHTML+=`<div>→ ${e
 $("#skGrid").innerHTML=CONFIG.skills.map((s,i)=>`<button class="card sk" data-i="${i}" aria-pressed="false"><h3>${esc(s.n)}</h3><small class="mono">tap for details</small></button>`).join("");
 $("#skGrid").onclick=e=>{const b=e.target.closest(".sk");if(!b)return;document.querySelectorAll(".sk").forEach(x=>x.setAttribute("aria-pressed","false"));b.setAttribute("aria-pressed","true");const s=CONFIG.skills[b.dataset.i];
  $("#skInfo").innerHTML=`<h3>${esc(s.n)}</h3><p>${esc(s.d)}</p><div class="bar" role="img" aria-label="Self-assessed ${s.lvl} percent"><span style="width:${s.lvl}%"></span></div><small class="mono">Self-assessment: ${s.lvl}% (my own opinion, not a test result)</small>`};
-
-/* projects */
-const techs=["All",...new Set(CONFIG.projects.flatMap(p=>p.tech))];let flt="All";
-function renderP(){$("#filters").innerHTML=techs.map(t=>`<button aria-pressed="${t===flt}" data-t="${esc(t)}">${esc(t)}</button>`).join("");
- $("#pGrid").innerHTML=CONFIG.projects.map((p,i)=>({p,i})).filter(({p})=>flt==="All"||p.tech.includes(flt)).map(({p,i})=>
- `<button class="card proj" data-i="${i}"><div class="shot">screenshot placeholder</div><h3>${esc(p.name)}</h3><div>${esc(p.desc)}</div><div class="tags">${p.tech.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div></button>`).join("")}
-$("#filters").onclick=e=>{const b=e.target.closest("button");if(b){flt=b.dataset.t;renderP()}};
-$("#pGrid").onclick=e=>{const b=e.target.closest(".proj");if(!b)return;const p=CONFIG.projects[b.dataset.i];
- $("#mBody").innerHTML=`<h3 id="mTitle">${esc(p.name)}</h3><p>${esc(p.desc)}</p><div class="tags">${p.tech.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div><ul>${p.features.map(f=>`<li>${esc(f)}</li>`).join("")}</ul>
- <div class="row">${p.repo?`<a class="btn" target="_blank" rel="noopener" href="${esc(p.repo)}">View Code</a>`:`<span class="tag">Code link not added</span>`}${p.demo?`<a class="btn primary" target="_blank" rel="noopener" href="${esc(p.demo)}">Live Demo</a>`:`<span class="tag">No live demo</span>`}<button class="btn" onclick="modal.close()">Close</button></div>`;modal.showModal()};
-const modal=$("#modal");modal.addEventListener("click",e=>{if(e.target===modal)modal.close()});renderP();
-
-/* journey */
-$("#tl").innerHTML=CONFIG.journey.map(j=>`<li><b>${esc(j.t)}</b><span>${esc(j.d)}</span></li>`).join("");
 
 /* fun zone */
 const bugs=["Fixed one bug. Accidentally created three more.","Removed a semicolon. Now it works. Nobody knows why.","Added a console.log. Bug became shy and vanished.","Bug fixed! Turns out it was a feature.","Restarted it. Classic.","Blamed the cache. The cache accepts responsibility."];
