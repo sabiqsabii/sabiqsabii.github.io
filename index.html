@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>[YOUR NAME] – BTech CSE Student & Aspiring Web Developer</title>
-<meta name="description" content="Portfolio of [YOUR NAME], a BTech CSE student from Kerala, India, learning web development and building projects.">
-<meta property="og:title" content="[YOUR NAME] – Developer Portfolio">
+<title>SABIQ A</title>
+<meta name="description" content="Portfolio of SABIQ A, a BTech CSE student from Kerala, India, learning web development and building projects.">
+<meta property="og:title" content="SABIQ A – Developer Portfolio">
 <meta property="og:description" content="I turn caffeine into questionable code.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,7 +59,7 @@ nav .wrap{display:flex;align-items:center;gap:16px;height:60px}
 .profile{position:relative;justify-self:center;width:min(100%,340px);transition:transform .25s}
 .profile:hover{transform:rotate(-2deg) scale(1.02)}
 .frame{aspect-ratio:4/5;border-radius:28px;border:2px solid var(--accent);box-shadow:0 0 60px var(--glow);overflow:hidden;background:var(--surface2);display:grid;place-items:center}
-.frame img{width:100%;height:100%;object-fit:cover;display:block}
+.frame img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;min-width:100%;min-height:100%}
 .frame .ph{font:700 64px var(--mono);color:var(--accent)}
 .chip{position:absolute;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:6px 10px;font:600 13px var(--mono);animation:bob 4s ease-in-out infinite}
 .chip:nth-of-type(2){animation-delay:-1.3s}.chip:nth-of-type(3){animation-delay:-2.6s}
@@ -78,13 +78,6 @@ mark{background:linear-gradient(transparent 60%,var(--glow) 60%);color:inherit}
 .sk h3{font-size:1.3rem}
 .sk small{color:var(--muted)}
 #skInfo{margin-top:16px;min-height:120px}
-.term{background:#050706;color:#d6ffe6;border:1px solid var(--line);border-radius:16px;font:400 14px/1.6 var(--mono);overflow:hidden;margin-top:28px}
-.term .bar2{background:#121614;padding:8px 14px;color:#8a968f;border-bottom:1px solid #1f2623}
-#out{padding:14px;height:230px;overflow-y:auto;white-space:pre-wrap;word-break:break-word}
-.term form{display:flex;border-top:1px solid #1f2623}
-.term label{padding:12px 0 12px 14px;color:#39ff88}
-.term input{flex:1;background:none;border:0;color:#fff;font:inherit;padding:12px;min-width:0}
-.term input:focus{outline:none}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
 .tag{font:400 12px var(--mono);border:1px solid var(--line);border-radius:99px;padding:2px 10px;color:var(--muted)}
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
@@ -122,7 +115,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
 <nav aria-label="Main">
  <div class="wrap">
   <button class="logo" id="logo" aria-label="Logo" title="Hmm, why is this clickable?">&lt;/me&gt;</button>
-  <div class="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#journey">Journey</a><a href="#contact">Contact</a></div>
+  <div class="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#journey">Journey</a><a href="#socials">Socials</a></div>
   <button class="ico" id="motion" aria-pressed="false" aria-label="Reduce motion" title="Reduce motion">✦</button>
   <button class="ico" id="theme" aria-label="Toggle light and dark theme" title="Toggle theme">☾</button>
  </div>
@@ -138,14 +131,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
    <div class="role" id="role" aria-live="off"></div>
    <div class="row">
     <a class="btn primary" href="#projects">Explore My Work</a>
-    <a class="btn" href="#contact">Let’s Connect</a>
+    <a class="btn" href="#socials">Let’s Connect</a>
    </div>
    <div class="dont"><button class="btn" id="dont">Don’t Click This</button><div id="dontMsg" aria-live="polite"></div></div>
   </div>
   <div class="profile">
-   <div class="frame" id="frame">
-      <img src="" alt="">
-   </div>
+   <div class="frame" id="frame"></div>
    <span class="chip" style="top:-10px;right:-8px">&lt;html/&gt;</span>
    <span class="chip" style="bottom:50px;left:-14px">$ git push</span>
    <span class="chip" style="bottom:-10px;right:20px">{ JS }</span>
@@ -178,11 +169,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
  <p class="lead">Tap a skill. The meter is my own self-assessment, not a measured score.</p>
  <div class="grid" id="skGrid"></div>
  <div class="card" id="skInfo" aria-live="polite">Pick a skill above.</div>
- <div class="term" role="region" aria-label="Interactive terminal">
-  <div class="bar2">portfolio — terminal</div>
-  <div id="out" tabindex="0"></div>
-  <form id="tf"><label for="tin">$</label><input id="tin" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="type help"></form>
- </div>
 </div></section>
 
 <section id="projects"><div class="wrap">
@@ -202,7 +188,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
 
 <section id="fun"><div class="wrap">
  <h2>The Developer Experience</h2>
- <p class="lead">Small things to poke at. Try <code>sudo hire-me</code> in the terminal above.</p>
+ <p class="lead">Small interactive things to poke at.</p>
  <div class="dx">
   <div class="card"><h3>Bug simulator</h3><div class="out" id="bugOut">0 bugs fixed.</div><button class="btn" id="bug">Fix a Bug</button></div>
   <div class="card"><h3>Developer mood</h3><div class="out" id="moodOut">Mood: Locked In</div><div class="moods" id="moods"></div></div>
@@ -210,22 +196,10 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
  </div>
 </div></section>
 
-<section id="contact"><div class="wrap">
- <h2 class="big">Got an idea? Let’s build something.</h2>
- <div class="row" style="margin:24px 0 32px">
-  <a class="btn primary" id="mail" href="#">Email me</a>
-  <button class="btn" id="copy">Copy email</button>
-  <a class="btn" id="gh" href="#" rel="noopener">GitHub</a>
-  <a class="btn" id="li" href="#" rel="noopener">LinkedIn</a>
- </div>
- <form class="card" id="cf" novalidate style="max-width:560px">
-  <p class="mono" style="margin-top:0;color:var(--muted);font-size:14px">Demo form: nothing is sent until you connect a service (e.g. Formspree) by setting <code>CONFIG.formEndpoint</code>.</p>
-  <div class="field"><label for="n">Name</label><input id="n" autocomplete="name"><div class="err" id="en"></div></div>
-  <div class="field"><label for="e">Email</label><input id="e" type="email" autocomplete="email"><div class="err" id="ee"></div></div>
-  <div class="field"><label for="m">Message</label><textarea id="m" rows="4"></textarea><div class="err" id="em"></div></div>
-  <button class="btn primary" type="submit">Send message</button>
-  <div id="fs" class="out" aria-live="polite"></div>
- </form>
+<section id="socials"><div class="wrap">
+ <h2 class="big">Find me online</h2>
+ <p class="lead">Find me on GitHub, LinkedIn, and Instagram.</p>
+ <div class="grid" id="soGrid"></div>
  <p style="margin-top:32px;color:var(--muted);max-width:60ch">Thanks for visiting. You may now close this tab and pretend you discovered me before I became famous.</p>
 </div></section>
 </main>
@@ -238,9 +212,10 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
 <script>
 /* ===== EDIT ME: everything personal lives here ===== */
 const CONFIG={
- name:"[YOUR NAME]", college:"[YOUR COLLEGE]", location:"Kerala, India",
- photo:"", /* put a path or data: URL of your photo here, e.g. "assets/me.jpg" */
- github:"", linkedin:"", email:"", formEndpoint:"",
+ name:"SABIQ A", college:"[YOUR COLLEGE]", location:"Kerala, India",
+ photo:"me.jpg", /* Image file in the same directory */
+ github:"https://github.com/sabiqsabii", linkedin:"https://www.linkedin.com/in/sabiq-a-937333389?utm_source=share_via&utm_content=profile&utm_medium=member_android", instagram:"https://www.instagram.com/sabiqsabii/",
+ extraSocials:[], /* e.g. [{n:"Instagram",u:"https://instagram.com/you"}] */
  learning:"[CURRENTLY LEARNING]", building:"[CURRENT PROJECT]",
  roles:["CSE Student","Aspiring Web Developer","Bug Creator & Occasional Fixer","Future Software Engineer"],
  moreFacts:["I have strong opinions about tabs vs spaces and I’m still deciding them.","Some of my best ideas arrive right after I close the laptop.","[ADD A FACT ABOUT YOU]"],
@@ -255,8 +230,7 @@ const CONFIG={
  projects:[
   {name:"Automatic Exam Seating Arrangement System",desc:"[Describe your project]",tech:["JavaScript","HTML"],features:["[Feature 1]","[Feature 2]"],repo:"",demo:""},
   {name:"Vehicle Carbon Emission Calculator",desc:"[Describe your project]",tech:["C++"],features:["[Feature 1]","[Feature 2]"],repo:"",demo:""},
-  {name:"Algorithm Visualizer",desc:"[Describe your project]",tech:["JavaScript","CSS"],features:["[Feature 1]","[Feature 2]"],repo:"",demo:""},
-  {name:"[ADD ANOTHER PROJECT]",desc:"[Describe your project]",tech:["C"],features:["[Feature 1]"],repo:"",demo:""}
+  
  ],
  journey:[
   {t:"Started exploring programming",d:"[Add your story]"},{t:"Began studying Computer Science Engineering",d:"[Add details]"},
@@ -272,11 +246,15 @@ function toast(t){const e=$("#toast");e.textContent=t;e.classList.add("on");clea
 const B={name:CONFIG.name,location:CONFIG.location,learning:CONFIG.learning,building:CONFIG.building};
 document.querySelectorAll("[data-bind]").forEach(e=>{e.textContent=e.dataset.bind==="heroTitle"?`I’m ${CONFIG.name}. I turn caffeine into questionable code.`:B[e.dataset.bind]});
 $("#yr").textContent="© "+new Date().getFullYear();
-$("#frame").innerHTML=CONFIG.photo?`<img src="${esc(CONFIG.photo)}" alt="Portrait of ${esc(CONFIG.name)}" loading="eager">`:`<div class="ph" role="img" aria-label="Photo placeholder">&lt;/&gt;</div>`;
-function link(id,url,fallback){const a=$(id);if(url){a.href=url;a.target="_blank"}else{a.href="#contact";a.addEventListener("click",()=>toast(fallback+" link not set yet"))}}
-link("#gh",CONFIG.github,"GitHub");link("#gh2",CONFIG.github,"GitHub");link("#li",CONFIG.linkedin,"LinkedIn");link("#li2",CONFIG.linkedin,"LinkedIn");
-$("#mail").href=CONFIG.email?"mailto:"+CONFIG.email:"#contact";
-$("#copy").onclick=async()=>{if(!CONFIG.email)return toast("Email not set yet");try{await navigator.clipboard.writeText(CONFIG.email);toast("Email copied ✓")}catch{toast("Copy failed. Select it manually: "+CONFIG.email)}};
+$("#frame").innerHTML=CONFIG.photo?`<img src="${esc(CONFIG.photo)}" alt="${esc(CONFIG.name)}" loading="eager" onerror="this.onerror=null;this.src='me-1.jpg'">`:`<div class="ph" role="img" aria-label="Photo placeholder">&lt;/&gt;</div>`;
+function link(id,url,fallback){const a=$(id);if(url){a.href=url;a.target="_blank"}else{a.href="#socials";a.addEventListener("click",()=>toast(fallback+" link not set yet"))}}
+link("#gh2",CONFIG.github,"GitHub");link("#li2",CONFIG.linkedin,"LinkedIn");
+const socials=[{n:"GitHub",u:CONFIG.github},{n:"LinkedIn",u:CONFIG.linkedin},{n:"Instagram",u:CONFIG.instagram},...CONFIG.extraSocials];
+$("#soGrid").innerHTML = socials.map(s =>
+  `<a class="card sk" style="text-decoration:none" href="${esc(s.u)}" target="_blank" rel="noopener">
+    <h3>${esc(s.n)}</h3>
+  </a>`
+).join("");
 
 /* theme + motion */
 const root=document.documentElement;
@@ -308,21 +286,6 @@ $("#skGrid").innerHTML=CONFIG.skills.map((s,i)=>`<button class="card sk" data-i=
 $("#skGrid").onclick=e=>{const b=e.target.closest(".sk");if(!b)return;document.querySelectorAll(".sk").forEach(x=>x.setAttribute("aria-pressed","false"));b.setAttribute("aria-pressed","true");const s=CONFIG.skills[b.dataset.i];
  $("#skInfo").innerHTML=`<h3>${esc(s.n)}</h3><p>${esc(s.d)}</p><div class="bar" role="img" aria-label="Self-assessed ${s.lvl} percent"><span style="width:${s.lvl}%"></span></div><small class="mono">Self-assessment: ${s.lvl}% (my own opinion, not a test result)</small>`};
 
-/* terminal */
-const out=$("#out");function say(t,cls){out.insertAdjacentHTML("beforeend",`<div>${t}</div>`);out.scrollTop=out.scrollHeight}
-say("Welcome. Type <b>help</b> to see commands.");
-const cmds={
- help:()=>"Commands: help, about, skills, projects, contact, clear, sudo hire-me",
- about:()=>`${esc(CONFIG.name)}: BTech CSE student, ${esc(CONFIG.location)}. Learning ${esc(CONFIG.learning)}.`,
- skills:()=>CONFIG.skills.map(s=>esc(s.n)).join(", "),
- projects:()=>CONFIG.projects.map((p,i)=>`${i+1}. ${esc(p.name)}`).join("<br>"),
- contact:()=>`Email: ${esc(CONFIG.email||"[YOUR EMAIL]")}<br>GitHub: ${esc(CONFIG.github||"[YOUR GITHUB LINK]")}`,
- "sudo hire-me":()=>"[sudo] password for recruiter: ********<br>Access granted. Candidate is enthusiastic, caffeinated, and teachable. (Simulated: no real command ran.)",
- clear:()=>{out.innerHTML="";return null}
-};
-$("#tf").onsubmit=e=>{e.preventDefault();const v=$("#tin").value.trim().toLowerCase().replace(/\s+/g," ");$("#tin").value="";if(!v)return;
- say(`<span style="color:#39ff88">$</span> ${esc(v)}`);const f=cmds[v];const r=f?f():`Command not found: ${esc(v)}. Try <b>help</b>.`;if(r)say(r)};
-
 /* projects */
 const techs=["All",...new Set(CONFIG.projects.flatMap(p=>p.tech))];let flt="All";
 function renderP(){$("#filters").innerHTML=techs.map(t=>`<button aria-pressed="${t===flt}" data-t="${esc(t)}">${esc(t)}</button>`).join("");
@@ -351,13 +314,6 @@ let lc=0;function egg(){toast("🥚 You found it. Secret unlocked: you’re offi
 $("#logo").onclick=()=>{if(++lc>=5){lc=0;egg()}};
 const K=["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a"];let ki=0;
 addEventListener("keydown",e=>{if(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA")return;ki=e.key===K[ki]?ki+1:(e.key===K[0]?1:0);if(ki===K.length){ki=0;egg()}});
-
-/* contact form */
-$("#cf").onsubmit=async e=>{e.preventDefault();const n=$("#n").value.trim(),m=$("#m").value.trim(),em=$("#e").value.trim();
- $("#en").textContent=n?"":"Enter your name.";$("#ee").textContent=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)?"":"Enter a valid email address.";$("#em").textContent=m.length>=10?"":"Write at least 10 characters.";
- if(!n||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)||m.length<10)return;
- if(!CONFIG.formEndpoint){$("#fs").textContent="Form is valid, but this is a demo: no message was sent. Use the email button above.";return}
- try{const r=await fetch(CONFIG.formEndpoint,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({name:n,email:em,message:m})});$("#fs").textContent=r.ok?"Message sent. Thank you!":"Sending failed. Please email me directly.";if(r.ok)e.target.reset()}catch{$("#fs").textContent="Network error. Please email me directly."}};
 </script>
 </body>
 </html>
